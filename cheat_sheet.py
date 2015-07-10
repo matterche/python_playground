@@ -66,11 +66,6 @@ isinstance("bla", basestring)
 # list comprehension
 len([x for x in "bxb" if x == 'x'])
 
-# support starting from command line
-if __name__ == "__main__":
-    s = raw_input("give me 1: ")
-    # assert with message
-    assert s == "1", 's is not 1'
 
 # if, elif, else
 if 1 in [1, 2]:
@@ -136,13 +131,6 @@ a.pop()
 a.pop(0)
 a.pop(3)
 
-# react on Ctrl+C
-try:
-    raw_input("Give me some input")
-except KeyboardInterrupt:
-    import sys  # can be done everywhere
-
-    sys.exit(1)
 
 
 # function definitions
@@ -171,12 +159,22 @@ arr = [1, 2, 3]
 map(lambda ch: str(ch), arr)
 map(str, arr)
 
-# list comprehensions
-# (3*x) in if is needed when comparison should be done after multiplication
-print [3 * x for x in range(10) if (3 * x) < 4]
-
 """
 Questions
  * is method overloading possible?
  * automatic type conversions
 """
+
+# support starting from command line
+if __name__ == "__main__":
+    s = raw_input("give me 1: ")
+    # assert with message
+    assert s == "1", 's is not 1'
+
+# react on Ctrl+C
+try:
+    raw_input("Give me some input")
+except KeyboardInterrupt:
+    import sys  # can be done everywhere
+
+    sys.exit(1)
